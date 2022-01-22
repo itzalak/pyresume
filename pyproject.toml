@@ -1,0 +1,54 @@
+[tool.poetry]
+name = "pyresume"
+version = "v2.1.4"
+description = "My python approach to building my resume from markdown"
+authors = ["Itzalak <itzalak@tuta.io>"]
+license = "MIT"
+readme = "README.md"
+keywords = ["curriculum", "resume"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+md2pdf = "^1.0.1"
+pytest = "^7.4.2"
+
+[tool.poetry.group.dev.dependencies]
+toml = "^0.10.2"
+
+[tool.pyright]
+include=["pyresume"]
+venvPath = "."
+venv = ".venv"
+executionEnvironments=[
+  {"root" = "pyresume"}
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.commitizen]
+name = "cz_customize"
+tag_format = "v$major.$minor.$patch"
+version_scheme = "semver"
+version = "2.1.4"
+update_changelog_on_bump = true
+version_files = [
+    "pyproject.toml",
+]
+
+[tool.commitizen.customize]
+message_template = "{{change_type}}:{% if show_message %} {{message}}{% endif %}"
+example = "feature: this feature enable customize through config file"
+schema = "<type>: <body>"
+schema_pattern = "(bump|break|feat|chore|docs|fix):(\\s.*)"
+bump_pattern = "^(bump|break|feat|chore|fix)"
+bump_map = { "break" = "MAJOR", "feat" = "MINOR", "fix" = "PATCH", "chore" = "PATCH", "docs" = "PATCH" }
+change_type_order = ["break", "feat", "fix", "chore", "docs"]
+info_path = "cz_customize_info.txt"
+info = """
+This is customized info
+"""
+commit_parser = "^(?P<change_type>break|feat|chore|docs|fix):\\s(?P<message>.*)?"
+changelog_pattern = "^(break|feat|chore|docs|fix)?(!)?"
+change_type_map = { "break" = "Breaking Change", "feat" = "Feature", "fix" = "Fix", "chore" = "Patch", "docs" = "Patch" }
