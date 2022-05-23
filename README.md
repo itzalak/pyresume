@@ -1,11 +1,11 @@
 # Markdown resume
 
 This is a simple script to build a pdf resume based on a markdown file and css style.
-It looks for a `RESUME.md` file, loads a css file from styles folder and generates or overrides a pdf file to output
+It looks for a `resume.md` file, loads a css file from styles folder and generates or overrides a pdf file to output
 folder.
 
 A style can be given as argument, if not will default to a [simple style](assets/styles/simple-style.css).
-The resume markdown file can be found [here](assets/RESUME.md).
+The resume markdown file can be found [here](assets/resume.md).
 
 *WARNING* this is a work in progress
 
@@ -92,7 +92,7 @@ $ pip-compile --upgrade-package <package-name>==<version>
 Run default
 
 ```shell
-$ python3 create_pdf.py
+$ python3 md_resume_to_pdf.py
 ```
 
 Run with selected style

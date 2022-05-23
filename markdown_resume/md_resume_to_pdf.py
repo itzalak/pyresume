@@ -1,11 +1,12 @@
-import datetime
 import sys
 
 from md2pdf.core import md2pdf
 
+from markdown_resume.utils.default_config import get_default_style, get_pdf_path, get_resume_path
 
-def set_appearance():
-    css_file_input = f'assets/styles/simple-style.css'
+
+def get_style():
+    css_file_input = get_default_style()
     if len(sys.argv) > 2:
         sys.exit(f'Unexpected arguments found, {len(sys.argv)} arguments were found, 1 was expected.')
     elif len(sys.argv) == 2:
@@ -13,15 +14,10 @@ def set_appearance():
     return css_file_input
 
 
-def build_pdf_filepath():
-    timestamp = datetime.date.today()
-    return f'output/resume-{timestamp}.pdf'
-
-
 def pdf_resume():
-    css_file_path = set_appearance()
-    pdf_file_path = build_pdf_filepath()
-    resume_path = 'assets/RESUME.md'
+    css_file_path = get_style()
+    pdf_file_path = get_pdf_path()
+    resume_path = get_resume_path()
 
     md2pdf(pdf_file_path,
            md_content=None,
