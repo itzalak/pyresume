@@ -4,9 +4,8 @@ This is a simple script to build a pdf resume based on a markdown file and css s
 It looks for a `RESUME.md` file, loads a css file from styles folder and generates or overrides a pdf file to output
 folder.
 
-A style can be given as argument, if not will default to a [simple style](styles/simple-style.css).
-
-The resume markdown file can be found [here](resume/RESUME.md)
+A style can be given as argument, if not will default to a [simple style](assets/styles/simple-style.css).
+The resume markdown file can be found [here](assets/RESUME.md).
 
 *WARNING* this is a work in progress
 
