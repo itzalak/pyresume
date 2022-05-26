@@ -2,7 +2,7 @@ import sys
 
 from md2pdf.core import md2pdf
 
-from markdown_resume.utils.default_config import get_default_style, get_pdf_path, get_resume_path
+from utils.default_config import get_default_style, get_pdf_path, get_resume_path
 
 
 def get_style():

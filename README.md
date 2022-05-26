@@ -17,9 +17,6 @@ The core of the work is done by the package [md2pdf](https://github.com/jmaupeti
 
 - [how-to](#how-to)
     - [environment](#environment)
-    - [requirements](#requirements)
-        - [pip freeze](#pip-freeze)
-        - [pip tools](#pip-tools)
     - [run](#run)
     - [tests](#tests)
 
@@ -45,60 +42,18 @@ $ pip install -r requirements.txt
 $ deactivate
 ```
 
-### Requirements
-
-#### Pip freeze
-
-```shell
-# Create a requirements file from all installed modules and versions
-# If file exist it will need to be deleted
-$ pip freeze > requirements.txt
-
-# List outdated packages
-$ pip list --outdated
-
-# Update one package
-$ pip install -U <package-name>
-
-# Update all
-$ pip install -U -r requirements.txt
-
-# Check missing dependencies
-$ python -m pip check
-```
-
-#### Pip tools
-
-```shell
-# Install pip-tools
-$ pip install pip-tools
-
-# Generate requirements.txt
-$ pip-compile requirements.in
-
-# Update requirements.txt
-$ pip-compile --upgrade
-
-# Update single package
-$ pip-compile --upgrade-package <package-name>
-
-# Update single package to a specific version
-# e.g. --upgrade-package requests==2.0.0
-$ pip-compile --upgrade-package <package-name>==<version>
-```
-
 ### Run
 
 Run default
 
 ```shell
-$ python3 md_resume_to_pdf.py
+$ python3 markdown_resume/md_resume_to_pdf.py
 ```
 
 Run with selected style
 
 ```shell
-$ python3 build_pdf_resume.py styles/bar-style.css
+$ python3 markdown_resume/md_resume_to_pdf.py assets/styles/bar-style.css
 ```
 
 ### Tests
