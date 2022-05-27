@@ -1,11 +1,11 @@
 # Markdown resume
 
 This is a simple script to build a pdf resume based on a markdown file and css style.
-It looks for a `resume.md` file, loads a css file from styles folder and generates or overrides a pdf file to output
-folder.
+It loads the default resume file, loads a css file from assets/styles folder and generates or overrides a pdf file to
+output folder.
 
-A style can be given as argument, if not will default to a [simple style](assets/styles/simple-style.css).
-The resume markdown file can be found [here](assets/resume.md).
+A style can be given as argument, if not, will default to a [simple style](markdown2pdf/assets/styles/simple-style.css).
+The resume markdown file can be found [here](markdown2pdf/assets/resume.md).
 
 *WARNING* this is a work in progress
 
@@ -47,13 +47,13 @@ $ deactivate
 Run default
 
 ```shell
-$ python3 markdown_resume/md_resume_to_pdf.py
+$ python3 markdown2pdf/md_resume_to_pdf.py
 ```
 
 Run with selected style
 
 ```shell
-$ python3 markdown_resume/md_resume_to_pdf.py assets/styles/bar-style.css
+$ python3 markdown2pdf/main.py --style markdown2pdf/assets/styles/structured-style.css
 ```
 
 ### Tests
