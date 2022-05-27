@@ -1,5 +1,0 @@
-ASSETS_FOLDER = f"markdown2pdf/assets"
-OUTPUT_FOLDER = f"output"
-STYLES_FOLDER = f"{ASSETS_FOLDER}/styles"
-DEFAULT_STYLE = f"{STYLES_FOLDER}/simple-style.css"
-RESUME_PATH = f"{ASSETS_FOLDER}/resume.md"

@@ -47,13 +47,19 @@ $ deactivate
 Run default
 
 ```shell
-$ python3 markdown2pdf/md_resume_to_pdf.py
+$ python3 markdown2pdf/__main__.py
 ```
 
-Run with selected style
+Run with default style, options are `-simple`, `-bar`, `-strucutred`
 
 ```shell
-$ python3 markdown2pdf/main.py --style markdown2pdf/assets/styles/structured-style.css
+$ python3 markdown2pdf/__main__.py --bar
+```
+
+Run with path to a css style
+
+```shell
+$ python3 markdown2pdf/__main__.py --style {{path/to/user/style.css}}
 ```
 
 ### Tests
@@ -63,5 +69,5 @@ $ python3 markdown2pdf/main.py --style markdown2pdf/assets/styles/structured-sty
 $ pytest
 
 # Run class test
-$ pytest tests/<test_file_name>.py
+$ pytest tests/{{test_file_name}}.py
 ```
