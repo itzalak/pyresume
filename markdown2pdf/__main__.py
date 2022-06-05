@@ -1,11 +1,11 @@
 import argparse
 import sys
 
-from file_utils import FileUtils
+from file_actions import FileActions
 from markdown_to_pdf import generate_pdf
 from settings import BAR_STYLE, SIMPLE_STYLE, DIVIDER_STYLE
 from settings import __version__
-from styles import print_styles
+from css_styles import CssStyles
 
 
 def get_args():
@@ -29,7 +29,7 @@ def parse_args(parser: argparse.ArgumentParser):
         parser.exit(0, "markdown2pdf %s\n" % __version__)
 
     if args.list:
-        print_styles()
+        CssStyles.print_styles()
 
     if len(sys.argv) <= 1:
         print(f"No arguments given, defaulting to simple style")
@@ -46,7 +46,7 @@ def parse_args(parser: argparse.ArgumentParser):
 
     elif args.style:
         style_path = args.style
-        if not FileUtils.locate_file(style_path):
+        if not FileActions.locate_file(style_path):
             print(f"Failed to locate input style file <{style_path}>!")
             print("Terminating...")
             sys.exit(1)

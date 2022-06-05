@@ -1,12 +1,12 @@
 import glob
-import re
+import os
 from os import remove
 from os.path import exists
 
-from markdown_to_pdf import generate_pdf, get_pdf_filename, get_pdf_path
+from markdown_to_pdf import generate_pdf
+from settings import SIMPLE_STYLE, BAR_STYLE, DIVIDER_STYLE, MODULE_DIR
 
 DATA_PATH = f'output/resume*.pdf'
-FILENAME_PATTERN = r"resume-\d{4}-\d{2}-\d{2}.pdf"
 
 
 def setup_function():
@@ -20,6 +20,14 @@ def setup_function():
             print(f"PDF deleted from {pdf_file_path}")
 
 
+def test_generate_pdf_from_given_style_file():
+    path = os.path.join(MODULE_DIR, "../tests/data/test-style.css")
+    generate_pdf(path)
+
+    asset_path = glob.glob(DATA_PATH)[0]
+    assert exists(asset_path)
+
+
 def test_generate_pdf_from_defaults():
     generate_pdf(None)
 
@@ -27,16 +35,22 @@ def test_generate_pdf_from_defaults():
     assert exists(asset_path)
 
 
-def test_pdf_filename():
-    pattern = re.compile(FILENAME_PATTERN, re.IGNORECASE)
+def test_generate_pdf_simple_style():
+    generate_pdf(SIMPLE_STYLE)
 
-    filename = get_pdf_filename()
-    assert pattern.search(filename)
+    asset_path = glob.glob(DATA_PATH)[0]
+    assert exists(asset_path)
 
 
-def test_get_pdf_path():
-    path = "output/".join({FILENAME_PATTERN})
-    pattern = re.compile(path, re.IGNORECASE)
+def test_generate_pdf_bar_style():
+    generate_pdf(BAR_STYLE)
 
-    pdf_path = get_pdf_path()
-    assert pattern.search(pdf_path)
+    asset_path = glob.glob(DATA_PATH)[0]
+    assert exists(asset_path)
+
+
+def test_generate_pdf_divider_style():
+    generate_pdf(DIVIDER_STYLE)
+
+    asset_path = glob.glob(DATA_PATH)[0]
+    assert exists(asset_path)

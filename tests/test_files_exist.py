@@ -10,7 +10,7 @@ def test_resume_markdown_file_exists():
     assert exists(RESUME_PATH)
 
 
-def test_simple_style_exists():
+def test_styles_exists():
     assert exists(f'{STYLE_PATH}/simple-style.css')
     assert exists(f'{STYLE_PATH}/bar-style.css')
     assert exists(f'{STYLE_PATH}/divider-style.css')
