@@ -1,5 +1,5 @@
-import datetime
 import os
+from datetime import datetime
 
 from settings import OUTPUT_DIR, ASSETS_DIR
 
@@ -10,7 +10,8 @@ class DefaultResume:
     @staticmethod
     def build_output_resume_filename():
         """Create pdf name with timestamp identifier"""
-        timestamp = datetime.date.today()
+        date_format_str = '%Y%m%d%H%M%S'
+        timestamp = datetime.now().strftime(date_format_str)
         pdf_filename = f'resume-{timestamp}.pdf'
         return pdf_filename
 

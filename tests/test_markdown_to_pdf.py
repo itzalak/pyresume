@@ -118,14 +118,14 @@ def test_system_exit_css_not_found():
         main(input_file, RESUME)
 
 
-def test_system_exist_markdown_not_found():
+def test_system_exit_markdown_not_found():
     input_file = os.path.join(MODULE_DIR, 'non-existent-file.md')
 
     with pytest.raises(SystemExit):
         main(DEFAULT_STYLE, input_file)
 
 
-def test_system_exist_file_not_markdown():
+def test_system_exit_file_not_markdown():
     input_file = os.path.join(MODULE_DIR, '../tests/data/non-existent-file.mk')
 
     with pytest.raises(SystemExit):

@@ -3,7 +3,7 @@ import re
 from default_resume import DefaultResume
 from settings import OUTPUT_DIR, MODULE_DIR
 
-FILENAME_PATTERN = r'resume-\d{4}-\d{2}-\d{2}.pdf'
+FILENAME_PATTERN = r'resume-\d{14}.pdf'
 RESUME_PATH = f'{MODULE_DIR}/assets/resume.md'
 
 
