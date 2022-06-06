@@ -12,10 +12,10 @@ class FileActions:
         return os.path.isdir(path)
 
     @staticmethod
-    def locate_file(path) -> bool:
-        """Check if the given path is a file"""
-        print(path)
-        return os.path.isfile(path)
+    def locate_file(path):
+        """Check if the given path is a file, if not raise an exception"""
+        if not os.path.isfile(path):
+            raise FileNotFoundError(f'No file was found on path: {path}')
 
     @staticmethod
     def replace_extensions_markdown_for_pdf(filename: str):

@@ -19,8 +19,10 @@ def generate_pdf(style: str, markdown_file: str):
 
 def main(style: str, markdown_file: str):
     try:
+        FileActions.locate_file(style)
+        FileActions.locate_file(markdown_file)
         generate_pdf(style, markdown_file)
     except (FileNotFoundError, ValueError) as err:
-        print(f'Ups! {err}')
-        print('Terminating...')
+        print(f'Fatal error: {err}')
+        print('Application was terminated gracefully...')
         sys.exit(1)

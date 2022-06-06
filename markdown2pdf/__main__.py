@@ -3,7 +3,6 @@ import sys
 
 from css_styles import CssStyles
 from default_resume import DefaultResume
-from file_actions import FileActions
 from markdown_to_pdf import main
 from settings import __version__
 
@@ -45,10 +44,6 @@ def parse_args(parser: argparse.ArgumentParser):
 
     if args.md:
         markdown_file = args.md
-        if not FileActions.locate_file(markdown_file):
-            print(f'Failed to locate input markdown file <{markdown_file}>!')
-            print('Terminating...')
-            sys.exit(1)
 
     if args.bar:
         css_style = CssStyles.bar_style
@@ -61,10 +56,6 @@ def parse_args(parser: argparse.ArgumentParser):
 
     if args.style:
         css_style = args.style
-        if not FileActions.locate_file(css_style):
-            print(f'Failed to locate input style file <{css_style}>!')
-            print('Terminating...')
-            sys.exit(1)
 
     main(css_style, markdown_file)
 

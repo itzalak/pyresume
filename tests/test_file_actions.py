@@ -15,11 +15,12 @@ def test_failed_locate_dir():
 
 
 def test_successful_locate_file():
-    assert FileActions.locate_file(os.path.join(MODULE_DIR, '../tests/data/test-markdown-file.md'))
+    FileActions.locate_file(os.path.join(MODULE_DIR, '../tests/data/test-markdown-file.md'))
 
 
 def test_failed_locate_file():
-    assert not FileActions.locate_file(os.path.join(MODULE_DIR, 'some-file'))
+    with pytest.raises(FileNotFoundError, match=r'No file was found on path: some-name.markdown'):
+        FileActions.locate_file('some-name.markdown')
 
 
 def test_successful_replacement_of_md_extension():

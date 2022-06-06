@@ -109,3 +109,24 @@ def test_default_main_call():
 
     asset_path = glob.glob(OUTPUT_DATA_PATH)[0]
     assert exists(asset_path)
+
+
+def test_system_exit_css_not_found():
+    input_file = os.path.join(MODULE_DIR, 'non-existent-file.css')
+
+    with pytest.raises(SystemExit):
+        main(input_file, RESUME)
+
+
+def test_system_exist_markdown_not_found():
+    input_file = os.path.join(MODULE_DIR, 'non-existent-file.md')
+
+    with pytest.raises(SystemExit):
+        main(DEFAULT_STYLE, input_file)
+
+
+def test_system_exist_file_not_markdown():
+    input_file = os.path.join(MODULE_DIR, '../tests/data/non-existent-file.mk')
+
+    with pytest.raises(SystemExit):
+        main(DEFAULT_STYLE, input_file)
