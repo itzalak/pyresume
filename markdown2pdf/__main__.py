@@ -1,11 +1,11 @@
 import argparse
 import sys
 
-from file_actions import FileActions
-from markdown_to_pdf import generate_pdf
-from settings import BAR_STYLE, SIMPLE_STYLE, DIVIDER_STYLE
-from settings import __version__
 from css_styles import CssStyles
+from default_resume import DefaultResume
+from file_actions import FileActions
+from markdown_to_pdf import main
+from settings import __version__
 
 
 def get_args():
@@ -16,56 +16,60 @@ def get_args():
     group.add_argument('-simple', action='store_true', help='Generate pdf with simple style.')
     group.add_argument('-bar', action='store_true', help='Generate pdf with colored bar before headers.')
     group.add_argument('-divider', action='store_true', help='Generate pdf with colored divider between headers.')
-    args.add_argument("-l", '--list', action="store_true", help="List all available styles.")
-    args.add_argument("-v", '--version', action="store_true", help="Print \"wal\" version.")
+    args.add_argument('-m', '--md', type=str, metavar='path/to/markdown/file.md', help='Path to input markdown file.')
+    group.add_argument('-l', '--list', action='store_true', help='List all available styles.')
+    group.add_argument('-v', '--version', action='store_true', help='Print \'wal\' version.')
 
     return args
+
+
+def parse_final_args(parser: argparse.ArgumentParser):
+    """Process final arguments"""
+    args = parser.parse_args()
+
+    if args.version:
+        parser.exit(0, 'markdown2pdf %s\n' % __version__)
+
+    if args.list:
+        parser.exit(0, CssStyles.print_styles())
 
 
 def parse_args(parser: argparse.ArgumentParser):
     """Process arguments"""
     args = parser.parse_args()
-    if args.version:
-        parser.exit(0, "markdown2pdf %s\n" % __version__)
-
-    if args.list:
-        CssStyles.print_styles()
+    markdown_file = DefaultResume.default_resume_path
+    css_style = CssStyles.default_style
 
     if len(sys.argv) <= 1:
-        print(f"No arguments given, defaulting to simple style")
-        main(SIMPLE_STYLE)
+        print(f'No arguments given, defaulting to simple style')
 
-    elif args.bar:
-        main(BAR_STYLE)
-
-    elif args.divider:
-        main(DIVIDER_STYLE)
-
-    elif args.simple:
-        main(SIMPLE_STYLE)
-
-    elif args.style:
-        style_path = args.style
-        if not FileActions.locate_file(style_path):
-            print(f"Failed to locate input style file <{style_path}>!")
-            print("Terminating...")
+    if args.md:
+        markdown_file = args.md
+        if not FileActions.locate_file(markdown_file):
+            print(f'Failed to locate input markdown file <{markdown_file}>!')
+            print('Terminating...')
             sys.exit(1)
 
-        main(style_path)
+    if args.bar:
+        css_style = CssStyles.bar_style
 
+    if args.divider:
+        css_style = CssStyles.divider_style
 
-def main(style: str):
-    try:
-        generate_pdf(style)
-    except FileNotFoundError as err:
-        print(f"Ups! {err}")
-        print("Terminating...")
-        sys.exit(1)
+    if args.simple:
+        css_style = CssStyles.simple_style
+
+    if args.style:
+        css_style = args.style
+        if not FileActions.locate_file(css_style):
+            print(f'Failed to locate input style file <{css_style}>!')
+            print('Terminating...')
+            sys.exit(1)
+
+    main(css_style, markdown_file)
 
 
 if __name__ == '__main__':
     argparser = get_args()
+    parse_final_args(argparser)
     parse_args(argparser)
-
-# TODO: Later we could consider abstracting to take o input file
-#  instead of a default resume

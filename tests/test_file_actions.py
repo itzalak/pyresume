@@ -1,39 +1,49 @@
 import os
-import re
+
+import pytest
 
 from file_actions import FileActions
 from settings import MODULE_DIR
 
-FILENAME_PATTERN = r"resume-\d{4}-\d{2}-\d{2}.pdf"
-RESUME_PATH = f"{MODULE_DIR}/assets/resume.md"
-OUTPUT_DIR = f"output"
+
+def test_successful_locate_dir():
+    assert FileActions.locate_directory(os.path.join(MODULE_DIR, '../output'))
 
 
-def test_locate_dir():
-    assert FileActions.locate_directory(OUTPUT_DIR)
+def test_failed_locate_dir():
+    assert not FileActions.locate_directory('some-folder')
 
 
-def test_locate_file():
-    assert FileActions.locate_file(RESUME_PATH)
+def test_successful_locate_file():
+    assert FileActions.locate_file(os.path.join(MODULE_DIR, '../tests/data/test-markdown-file.md'))
 
 
-def test_create_filename():
-    pattern = re.compile(FILENAME_PATTERN, re.IGNORECASE)
-
-    filename = FileActions.create_filename()
-    assert pattern.search(filename)
+def test_failed_locate_file():
+    assert not FileActions.locate_file(os.path.join(MODULE_DIR, 'some-file'))
 
 
-def test_resume_path():
-    path = f"{OUTPUT_DIR}/".join({FILENAME_PATTERN})
-    pattern = re.compile(path, re.IGNORECASE)
-
-    pdf_path = FileActions.resume_path()
-    assert pattern.search(pdf_path)
+def test_successful_replacement_of_md_extension():
+    pdf_path = FileActions.replace_extensions_markdown_for_pdf('some-name.md')
+    assert pdf_path == 'some-name.pdf'
 
 
-def test_file_path():
-    some_path = os.path.join(MODULE_DIR, "../output/some-name.pdf")
+def test_successful_replacement_of_markdown_extension():
+    pdf_path = FileActions.replace_extensions_markdown_for_pdf('some-name.markdown')
+    assert pdf_path == 'some-name.pdf'
 
-    pdf_path = FileActions.file_path("some-name.md")
+
+def test_failure_for_non_markdown_file():
+    with pytest.raises(ValueError, match=r'File must be from type markdown, instead \.[a-z]+ was found'):
+        FileActions.replace_extensions_markdown_for_pdf('some-name.txt')
+
+
+def test_successful_pdf_output_path():
+    some_path = os.path.join(MODULE_DIR, '../output/some-name.pdf')
+
+    pdf_path = FileActions.build_output_path('/test/data/some-name.md')
     assert pdf_path == some_path
+
+
+def test_failure_generating_pdf_output_path():
+    with pytest.raises(ValueError, match=r'File must be from type markdown, instead \.[a-z]+ was found'):
+        FileActions.replace_extensions_markdown_for_pdf('some-name.bak')

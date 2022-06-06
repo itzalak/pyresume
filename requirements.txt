@@ -34,7 +34,7 @@ py==1.11.0
     # via pytest
 pycparser==2.21
     # via cffi
-pydyf==0.1.2
+pydyf==0.2.0
     # via weasyprint
 pyparsing==3.0.9
     # via packaging

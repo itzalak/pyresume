@@ -1,10 +1,13 @@
 import os
 
-from settings import STYLES_DIR, SIMPLE_STYLE
+from settings import STYLES_DIR
 
 
 class CssStyles:
-    default_style = SIMPLE_STYLE
+    bar_style = os.path.join(STYLES_DIR, "bar-style.css")
+    divider_style = os.path.join(STYLES_DIR, "divider-style.css")
+    simple_style = os.path.join(STYLES_DIR, "simple-style.css")
+    default_style = simple_style
 
     @staticmethod
     def stylenames():
