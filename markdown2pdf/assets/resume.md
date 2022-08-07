@@ -41,7 +41,7 @@ Software Engineer @ _Zooplus, Munich_
 - Maintaining and monitoring existent system.
 - Analysis and documentation of new functionalities.
 
-**Technologies:** Mainly Java, Kotlin, Spring, Spock, Docker, Gradle and AWS
+**Technologies:** Mainly Java, Kotlin, Python, Spring, Spock, Docker, Kubernetes, Gradle and AWS
 
 ### From 06/2018 to 12/2018
 
