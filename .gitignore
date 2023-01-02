@@ -1,33 +1,7 @@
+# Venv
+venv/
+mk-venv/
 
-Skip to content
-
-    Product
-
-Team
-Enterprise
-Explore
-Marketplace
-Pricing
-
-Sign in
-Sign up
-simao-ferreira /
-python-template
-Public template
-
-Code
-Pull requests
-Security
-
-    Insights
-
-python-template/.gitignore
-@simao-ferreira
-simao-ferreira py-template: Update readme. gitignore and requirements.in
-Latest commit 8862ee5 on Nov 18, 2021
-History
-1 contributor
-132 lines (107 sloc) 1.78 KB
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

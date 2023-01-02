@@ -50,10 +50,10 @@ Run default
 $ python3 markdown2pdf/__main__.py
 ```
 
-Run with default style, options are `-simple`, `-bar`, `-strucutred`
+Run with default style, options are `-simple`, `-bar`, `-divider`
 
 ```shell
-$ python3 markdown2pdf/__main__.py --bar
+$ python3 markdown2pdf/__main__.py -bar
 ```
 
 Run with path to a css style

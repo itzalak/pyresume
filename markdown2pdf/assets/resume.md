@@ -27,7 +27,7 @@ I enjoy testing and monitoring, I find that sometimes half of the fun is finding
 **Coding Tools/Frameworks:** Spring, GIT, SQL, Junit, Spock, Maven, Gradle, IntelliJ.
 
 **Languages:** Strong reading, writing and speaking competencies for English, basic understanding of
-German, native Portuguese,.
+German, native Portuguese.
 
 ## Employment History
 
@@ -35,13 +35,13 @@ German, native Portuguese,.
 
 Software Engineer @ _Zooplus, Munich_
 
-**Project:** Internal products for accounting, financial booking, reporting and order management
+**Project:** Internal products for payments, accounting, reporting and order management
 
 - Designing, implementing and testing new features for microservices.
 - Maintaining and monitoring existent system.
 - Analysis and documentation of new functionalities.
 
-**Technologies:** Mainly Java, Kotlin, Python, Spring, Spock, Docker, Kubernetes, Gradle and AWS
+**Technologies:** Mainly Java, Kotlin, Python, Spring, Spock, Docker, Kubernetes, Gradle, Maven and AWS
 
 ### From 06/2018 to 12/2018
 
