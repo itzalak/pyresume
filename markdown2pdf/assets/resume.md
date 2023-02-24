@@ -14,11 +14,13 @@
 
 I am a Software Engineer. I have an inquisitive nature, I enjoy solving problems and keeping my brain challenged.
 
-I've worked mainly in Java environment, in different tools and frameworks like Kotlin, Groovy, Spring, Gradle
-and many other related technologies. There are a lot of other tools I have one way or another interacted,
-like Python, Docker or AWS, Oracle and PostgreSQL.
+I have developed and maintained microservices in an event-driven architecture using languages like Java, Kotlin, Groovy,
+and Spring. I focus on testing as insurance to code quality and customer satisfaction, I apply test-driven development
+and have worked with tools like Spock, JUnit, and Cucumber. I have created and maintained continuous integration and
+delivery pipelines focusing on deployments with containerization via Docker, Mesos, and Kubernetes.
 
-I enjoy testing and monitoring, I find that sometimes half of the fun is finding Wally (the bug!)
+In my free time, I find immense pleasure in coding and experimenting with various tools and languages, like Python,
+usually creating small scripts to automate day-to-day tasks.
 
 ## Skills
 
@@ -35,11 +37,14 @@ German, native Portuguese.
 
 Software Engineer @ _Zooplus, Munich_
 
-**Project:** Internal products for payments, accounting, reporting and order management
+**Project:** Internal products for payments, accounting and order management
 
-- Designing, implementing and testing new features for microservices.
-- Maintaining and monitoring existent system.
-- Analysis and documentation of new functionalities.
+- Designed, implemented, and tested microservices to automate data-heavy accounting features.
+- Maintained, monitored, and improved the existing systems based on oracle database integrations.
+- Analysed and documented requirements and technical details for new functionalities.
+- Contributed to and developed testing and alerting frameworks to prevent business failures with a customer satisfaction
+  focus.
+- Improved and ported microservices and pipelines to new infrastructure using AWS, Docker, Kubernetes, and Jenkins.
 
 **Technologies:** Mainly Java, Kotlin, Python, Spring, Spock, Docker, Kubernetes, Gradle, Maven and AWS
 
@@ -49,9 +54,10 @@ Software Engineer @ _ItGrow (Critical Software S.A.), Coimbra_
 
 **Project:** FinTech solution for fraud prevention and detection tailored to customer requirements.
 
-- Maintaining and monitoring of existent systems.
-- Improving and adding of functionality per customer requirement.
-- Improving testing suite.
+- Maintained and monitored clients' existing systems.
+- Improved functionalities per customer requirements.
+- Designed automated tools to manipulate JSON structures.
+- Introduced cucumber testing and increased testing coverage to company standards.
 
 **Technologies:** Mainly Java 8, Oracle, Docker, Agile, Mockito and Cucumber.
 
@@ -59,11 +65,12 @@ Software Engineer @ _ItGrow (Critical Software S.A.), Coimbra_
 
 Software Engineer Intern @ _Ciengis S.A., IPN Coimbra_
 
-**Project:** SaaS module for automated data extraction, analysis and business reporting for integration in broader tool.
+**Project:** SaaS module for automated data extraction, analysis, and business reporting for integration in a broader tool.
 
-- Backend design and implementation including RESTful API.
-- Frontend implementation according to UX guidelines
-- Quality assurance, unit testing, service integration and customer interviews
+- Reduced client manual workload by automating the creation of data-rich reports and dashboards.
+- Designed and implemented the backend through a RESTful API using Spring, Liquibase, and PostgreSQL.
+- Developed UI module using GWT according to company UX guidelines.
+- Improved quality assurance through unit testing and customer interviews.
 
 **Technologies:** Mainly Java 8, Spring Framework, GWT, Hibernate, Junit, Mockito.
 
