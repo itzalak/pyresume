@@ -37,7 +37,7 @@ German, native Portuguese.
 
 Software Engineer @ _Zooplus, Munich_
 
-**Project:** Internal products for payments, accounting and order management
+**Project:** Internal products for payments, accounting, reporting and order management
 
 - Designed, implemented, and tested microservices to automate data-heavy accounting features.
 - Maintained, monitored, and improved the existing systems based on oracle database integrations.
@@ -103,7 +103,7 @@ Application Development.
 
 - Scholar Internship: Web Development, Report module to Multiverse Application. @ _Ciengis S.A._
 
-### From 2004 to 2008
+### From 2004 to 2009
 
 **Integrated Masters in Electrotechnical Engineering**, Universidade de Coimbra, Portugal
 
