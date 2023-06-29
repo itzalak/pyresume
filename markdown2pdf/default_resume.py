@@ -10,9 +10,9 @@ class DefaultResume:
     @staticmethod
     def build_output_resume_filename():
         """Create pdf name with timestamp identifier"""
-        date_format_str = '%Y%m%d%H%M%S'
+        date_format_str = "%Y%m%d%H%M%S"
         timestamp = datetime.now().strftime(date_format_str)
-        pdf_filename = f'resume-{timestamp}.pdf'
+        pdf_filename = f"resume-{timestamp}.pdf"
         return pdf_filename
 
     @classmethod

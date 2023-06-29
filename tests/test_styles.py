@@ -31,7 +31,7 @@ def test_default_style_path():
 def test_stylenames():
     names = CssStyles.stylenames()
 
-    assert names == sorted(['simple-style', 'bar-style', 'divider-style'])
+    assert names == sorted(["simple-style", "bar-style", "divider-style"])
 
 
 def test_print_styles_output():
