@@ -14,8 +14,8 @@
 
 I am a Software Engineer. I have an inquisitive nature, I enjoy solving problems and keeping my brain challenged.
 
-I have developed and maintained microservices in an event-driven architecture using languages like Java, Kotlin, Groovy,
-and Spring. I focus on testing as insurance to code quality and customer satisfaction, I apply test-driven development
+I have developed and maintained microservices in an event-driven architecture using languages like Java, Kotlin, and Groovy,
+and using Spring Framework. I focus on testing as insurance to code quality and customer satisfaction, I apply test-driven development
 and have worked with tools like Spock, JUnit, and Cucumber. I have created and maintained continuous integration and
 delivery pipelines focusing on deployments with containerization via Docker, Mesos, and Kubernetes.
 
@@ -39,12 +39,12 @@ Software Engineer @ _Zooplus, Munich_
 
 **Project:** Internal products for payments, accounting, reporting and order management
 
-- Designed, implemented, and tested microservices to automate data-heavy accounting features.
-- Maintained, monitored, and improved the existing systems based on oracle database integrations.
+- Designed, implemented, and tested event driven microservices to automate data-heavy accounting features.
+- Maintained, monitored, and improved the existing systems based on oracle and postgresql database integrations.
 - Analysed and documented requirements and technical details for new functionalities.
 - Contributed to and developed testing and alerting frameworks to prevent business failures with a customer satisfaction
   focus.
-- Improved and ported microservices and pipelines to new infrastructure using AWS, Docker, Kubernetes, and Jenkins.
+- Improved and migrated microservices and pipelines to new infrastructure using AWS, Docker, Kubernetes, and Jenkins.
 
 **Technologies:** Mainly Java, Kotlin, Python, Spring, Spock, Docker, Kubernetes, Gradle, Maven and AWS
 
