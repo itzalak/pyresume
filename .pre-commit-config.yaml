@@ -23,7 +23,7 @@ repos:
     hooks:
       - id: conventional-pre-commit
         stages: [ commit-msg ]
-        args: [ fix, feat, chore, feat!, chore!, fix! ]
+        args: [ fix, feat, chore, docs, feat!, chore!, fix! ]
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.37.0

@@ -4,7 +4,7 @@
 
 **Name:** Simão Henrique Silva Ferreira
 
-**Email:** simao.ferreira@tuta.io
+**Email:** <simao.ferreira@tuta.io>
 
 **Linkedin** [https://www.linkedin.com/in/ferreirasimao](https://www.linkedin.com/in/ferreirasimao)
 
@@ -111,7 +111,7 @@ Application Development.
 
 ## Miscellaneous Experience
 
-**Certification**
+**Certification**, various
 
 **2018 - German** language course A1.1 by Sprachschule Aktiv, Munich.
 

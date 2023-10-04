@@ -13,7 +13,7 @@ The resume markdown file can be found [here](markdown2pdf/assets/resume.md).
 
 The core of the work is done by the package [md2pdf](https://github.com/jmaupetit/md2pdf).
 
-# Instructions
+## Instructions
 
 - [how-to](#how-to)
     - [environment](#environment)
@@ -28,18 +28,28 @@ following [issues](https://github.com/jmaupetit/md2pdf#troubleshooting-on-macosx
 
 ### Environment
 
+Create a new environment
+
 ```shell
-# Create a new environment
-$ python3 -m venv venv
+python3 -m venv venv
+```
 
-# Activate environment
-$ source venv/bin/activate
+Activate environment
 
-# Install dependencies
-$ pip install -r requirements.txt
+```shell
+source venv/bin/activate
+```
 
-# Deactivate
-$ deactivate
+Install dependencies
+
+```shell
+pip install -r requirements.txt
+```
+
+Deactivate
+
+```shell
+deactivate
 ```
 
 ### Run
@@ -47,19 +57,19 @@ $ deactivate
 Run default
 
 ```shell
-$ python3 markdown2pdf/__main__.py
+python3 markdown2pdf/__main__.py
 ```
 
 Run with default style, options are `-simple`, `-bar`, `-divider`
 
 ```shell
-$ python3 markdown2pdf/__main__.py -bar
+python3 markdown2pdf/__main__.py -bar
 ```
 
 Run with path to a css style
 
 ```shell
-$ python3 markdown2pdf/__main__.py --style {{path/to/user/style.css}}
+python3 markdown2pdf/__main__.py --style {{path/to/user/style.css}}
 ```
 
 ### Tests
