@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+name: release-please
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: simple
+          package-name: exchange-rate-api
+          bump-minor-pre-major: true
+          bump-patch-for-minor-pre-major: true
+          extra-files: |
+            markodown2pdf/settings.py
+          changelog-types: '[{"type":"feat","section":"Added","hidden":false},{"type":"fix","section":"Changed","hidden":false},{"type":"chore","section":"Changed","hidden":false},{"type":"docs","section":"Added","hidden":false}]'
