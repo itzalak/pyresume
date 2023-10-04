@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/simao-ferreira/markdown-resume/compare/v1.0.0...v1.0.1) (2023-10-04)
+
+
+### Changed
+
+* **infra:** Fix typo in github actions ([4147029](https://github.com/simao-ferreira/markdown-resume/commit/4147029c0dfefbcc1dee82a73dd0faf7bb623f5d))
+
 ## 1.0.0 (2023-10-04)
 
 
