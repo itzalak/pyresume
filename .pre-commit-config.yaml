@@ -22,8 +22,8 @@ repos:
     rev: v2.4.0
     hooks:
       - id: conventional-pre-commit
-        stages: [ commit-msg ]
-        args: [ fix, feat, chore, docs, feat!, chore!, fix! ]
+        stages: [commit-msg]
+        args: [fix, feat, chore, docs, feat!, chore!, fix!]
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.37.0
@@ -38,9 +38,18 @@ repos:
     rev: v1.3.2
     hooks:
       - id: python-safety-dependencies-check
-        args: [ "--disable-telemetry" ]
+        args: ["--disable-telemetry"]
 
   - repo: https://github.com/psf/black
     rev: 23.9.1
     hooks:
       - id: black
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: run tests
+        entry: pytest tests
+        language: python
+        pass_filenames: false
+        verbose: true
