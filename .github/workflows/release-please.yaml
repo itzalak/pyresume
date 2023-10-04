@@ -20,5 +20,5 @@ jobs:
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
           extra-files: |
-            markodown2pdf/settings.py
+            markdown2pdf/settings.py
           changelog-types: '[{"type":"feat","section":"Added","hidden":false},{"type":"fix","section":"Changed","hidden":false},{"type":"chore","section":"Changed","hidden":false},{"type":"docs","section":"Added","hidden":false}]'
