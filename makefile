@@ -18,6 +18,14 @@ python-delete-venv:
 	rm -rf $(VENV)
 	rm -rf venv
 
+pre-commit: setup-pre-commit update-pre-commit
+
+setup-pre-commit:
+	pre-commit install
+
+update-pre-commit:
+	pre-commit autoupdate
+
 resume-bar:
 	. $(ACTIVATION) && python3 markdown2pdf/__main__.py -bar
 
