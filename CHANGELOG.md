@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/simao-ferreira/markdown-resume/compare/v1.0.1...v1.0.2) (2023-10-04)
+
+
+### Changed
+
+* **infra:** Add pre commit tests to every commit ([96ce03a](https://github.com/simao-ferreira/markdown-resume/commit/96ce03ae887aedca2f09985efe74d3229b028cde))
+
 ## [1.0.1](https://github.com/simao-ferreira/markdown-resume/compare/v1.0.0...v1.0.1) (2023-10-04)
 
 
