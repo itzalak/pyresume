@@ -23,9 +23,9 @@ Instructions for setup can be found in the [makefile](./makefile)
 
 ## Examples
 
-A style can be given as argument, if not, will default to a [simple style](markdown2pdf/assets/styles/simple-style.css).
-The resume markdown file can be found [here](markdown2pdf/assets/resume.md).
-Default style options are `-simple`, `-bar`, `-divider`, css for them can be found in [styles folder](./markdown2pdf/assets/styles/)
+A style can be given as argument, if not, will default to a [simple style](pyresume/assets/styles/simple-style.css).
+The resume markdown file can be found [here](pyresume/assets/resume.md).
+Default style options are `-simple`, `-bar`, `-divider`, css for them can be found in [styles folder](pyresume/assets/styles/)
 
 - Create a resume with simple look
 
@@ -36,13 +36,13 @@ make resume-simple
 - Or with poetry
 
 ```shell
-poetry run python markdown2pdf/__main__.py -simple
+poetry run python pyresume/__main__.py -simple
 ```
 
 - Run with path to a css style
 
 ```shell
-poetry run markdown2pdf/__main__.py --style {{path/to/user/style.css}}
+poetry run pyresume/__main__.py --style {{path/to/user/style.css}}
 ```
 
 ### Tests

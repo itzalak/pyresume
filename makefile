@@ -34,10 +34,10 @@ update-pre-commit:
 
 # Create resume
 resume-bar:
-	poetry run python markdown2pdf/__main__.py -bar
+	poetry run python pyresume/__main__.py -bar
 
 resume-simple:
-	poetry run python markdown2pdf/__main__.py -simple
+	poetry run python pyresume/__main__.py -simple
 
 resume-divider:
-	poetry run python markdown2pdf/__main__.py -divider
+	poetry run python pyresume/__main__.py -divider

@@ -48,7 +48,7 @@ def get_args():
         "-r", "--remove", action="store_true", help="Remove all pdf files from output."
     )
     group.add_argument(
-        "-v", "--version", action="store_true", help="Print 'markdown2pdf' version."
+        "-v", "--version", action="store_true", help="Print 'pyresume' version."
     )
 
     return args
@@ -59,7 +59,7 @@ def parse_final_args(parser: argparse.ArgumentParser):
     args = parser.parse_args()
 
     if args.version:
-        parser.exit(0, f"markdown2pdf {__version__}\n")
+        parser.exit(0, f"pyresume {__version__}\n")
 
     if args.list:
         parser.exit(0, CssStyles.print_styles())

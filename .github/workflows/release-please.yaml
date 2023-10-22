@@ -16,9 +16,9 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         with:
           release-type: simple
-          package-name: mardown-resume
+          package-name: pyresume
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
           extra-files: |
-            markdown2pdf/settings.py
+            pyresume/settings.py
           changelog-types: '[{"type":"feat","section":"Added","hidden":false},{"type":"fix","section":"Changed","hidden":false},{"type":"chore","section":"Changed","hidden":false},{"type":"docs","section":"Added","hidden":false}]'
