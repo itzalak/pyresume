@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/simao-ferreira/pyresume/compare/v1.1.1...v2.0.0) (2023-10-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* Rename package
+
+### Added
+
+* Rename package ([8c226be](https://github.com/simao-ferreira/pyresume/commit/8c226bed5b16fe266cd7a73b4821bdf779937001))
+
 ## [1.1.1](https://github.com/simao-ferreira/markdown-resume/compare/v1.1.0...v1.1.1) (2023-10-22)
 
 

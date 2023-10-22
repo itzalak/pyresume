@@ -3,7 +3,7 @@ import platform
 
 
 # x-release-please-start-version
-__version__ = "1.1.1"
+__version__ = "2.0.0"
 # x-release-please-end
 
 HOME = os.getenv("HOME", os.getenv("USERPROFILE"))
