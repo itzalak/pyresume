@@ -1,10 +1,9 @@
-# Markdown resume
+# Pyresume
 
-This is a simple script to build a pdf resume based on a markdown file and css style.
-It loads the default resume file, loads a css file from assets/styles folder and generates or overrides a pdf file to
-output folder.
+This is a python script to build a pdf resume based on a markdown file and some given css style.
 
-This package is mostly for testing stuff and generating my own resume, so you are probably lost...
+This package is mostly for testing stuff and generating my own resume, if you found yourself here, you are probably
+lost...
 
 ## Credits
 
@@ -23,9 +22,12 @@ Instructions for setup can be found in the [makefile](./makefile)
 
 ## Examples
 
-A style can be given as argument, if not, will default to a [simple style](pyresume/assets/styles/simple-style.css).
-The resume markdown file can be found [here](pyresume/assets/resume.md).
-Default style options are `-simple`, `-bar`, `-divider`, css for them can be found in [styles folder](pyresume/assets/styles/)
+To generate a resume:
+
+1. Replace the [resume file](./pyresume/assets/resume.md)
+2. Select a style from [style folder](./pyresume/assets/styles/) if none is selected defaults to [simple style](pyresume/assets/styles/simple-style.css)
+3. Run the execution command from the examples below, like `make resume-simple`, or `poetry run python pyresume/__main__.py -bar`
+4. Find the pdf resume under [output folder](./output)
 
 - Create a resume with simple look
 
@@ -33,7 +35,7 @@ Default style options are `-simple`, `-bar`, `-divider`, css for them can be fou
 make resume-simple
 ```
 
-- Or with poetry
+- Or with poetry, availbale style options are `-simple`, `-bar`, `-divider`
 
 ```shell
 poetry run python pyresume/__main__.py -simple
