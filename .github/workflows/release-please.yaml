@@ -16,7 +16,7 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         with:
           release-type: simple
-          package-name: exchange-rate-api
+          package-name: mardown-resume
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
           extra-files: |

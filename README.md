@@ -4,80 +4,57 @@ This is a simple script to build a pdf resume based on a markdown file and css s
 It loads the default resume file, loads a css file from assets/styles folder and generates or overrides a pdf file to
 output folder.
 
-A style can be given as argument, if not, will default to a [simple style](markdown2pdf/assets/styles/simple-style.css).
-The resume markdown file can be found [here](markdown2pdf/assets/resume.md).
-
-*WARNING* this is a work in progress
+This package is mostly for testing stuff and generating my own resume, so you are probably lost...
 
 ## Credits
 
-The core of the work is done by the package [md2pdf](https://github.com/jmaupetit/md2pdf).
+This code is just a wrapper for the work done by Julien Maupetit with [md2pdf](https://github.com/jmaupetit/md2pdf).
+
+## Requirements
+
+- Python
+- Black
+- Poetry
+- Pre-commit
 
 ## Instructions
 
-- [how-to](#how-to)
-    - [environment](#environment)
-    - [run](#run)
-    - [tests](#tests)
+Instructions for setup can be found in the [makefile](./makefile)
 
-## How to
+## Examples
 
-You can run this project with the following instructions, preferably running a virtual environment.
-If running on MacOSX please be aware of the
-following [issues](https://github.com/jmaupetit/md2pdf#troubleshooting-on-macosx)
+A style can be given as argument, if not, will default to a [simple style](markdown2pdf/assets/styles/simple-style.css).
+The resume markdown file can be found [here](markdown2pdf/assets/resume.md).
+Default style options are `-simple`, `-bar`, `-divider`, css for them can be found in [styles folder](./markdown2pdf/assets/styles/)
 
-### Environment
-
-Create a new environment
+- Create a resume with simple look
 
 ```shell
-python3 -m venv venv
+make resume-simple
 ```
 
-Activate environment
+- Or with poetry
 
 ```shell
-source venv/bin/activate
+poetry run python markdown2pdf/__main__.py -simple
 ```
 
-Install dependencies
+- Run with path to a css style
 
 ```shell
-pip install -r requirements.txt
-```
-
-Deactivate
-
-```shell
-deactivate
-```
-
-### Run
-
-Run default
-
-```shell
-python3 markdown2pdf/__main__.py
-```
-
-Run with default style, options are `-simple`, `-bar`, `-divider`
-
-```shell
-python3 markdown2pdf/__main__.py -bar
-```
-
-Run with path to a css style
-
-```shell
-python3 markdown2pdf/__main__.py --style {{path/to/user/style.css}}
+poetry run markdown2pdf/__main__.py --style {{path/to/user/style.css}}
 ```
 
 ### Tests
 
-```shell
-# Run all tests
-$ pytest
+- Run all tests
 
-# Run class test
-$ pytest tests/{{test_file_name}}.py
+```shell
+poetry run pytest
+```
+
+- Run one class test
+
+```shell
+poetry run pytest tests/{{test_file_name}}.py
 ```

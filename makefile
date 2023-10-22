@@ -1,23 +1,29 @@
 # Makefile
 
-VENV = mk-venv
-ACTIVATION = $(VENV)/bin/activate
+VENV = .venv
 
-venv: python-install-requirements
+install: poetry-local-venv python-delete-venv poetry-install
 
-python-install-requirements: python-update-requirements
-	. $(ACTIVATION) && pip3 install -r requirements.txt
-
-python-update-requirements: python-create-venv
-	. $(ACTIVATION) && pip-compile --upgrade requirements.in
-
-python-create-venv: python-delete-venv
-	python3 -m venv $(VENV)
+poetry-install:
+	poetry install
 
 python-delete-venv:
 	rm -rf $(VENV)
 	rm -rf venv
 
+poetry-local-venv:
+	poetry config virtualenvs.in-project true
+
+poetry-get-env:
+	poetry env info --path
+
+poetry-update:
+	poetry update
+
+poetry-test:
+	poetry run pytest
+
+# Pre-commit configuration
 pre-commit: setup-pre-commit update-pre-commit
 
 setup-pre-commit:
@@ -26,11 +32,12 @@ setup-pre-commit:
 update-pre-commit:
 	pre-commit autoupdate
 
+# Create resume
 resume-bar:
-	. $(ACTIVATION) && python3 markdown2pdf/__main__.py -bar
+	poetry run python markdown2pdf/__main__.py -bar
 
 resume-simple:
-	. $(ACTIVATION) && python3 markdown2pdf/__main__.py -simple
+	poetry run python markdown2pdf/__main__.py -simple
 
 resume-divider:
-	. $(ACTIVATION) && python3 markdown2pdf/__main__.py -divider
+	poetry run python markdown2pdf/__main__.py -divider
