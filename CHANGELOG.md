@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.1](https://github.com/simao-ferreira/pyresume/compare/v2.0.0...v2.0.1) (2023-10-22)
+
+
+### Changed
+
+* Set version only in pyproject ([27fc5a2](https://github.com/simao-ferreira/pyresume/commit/27fc5a22a61c0d65299d8faa7213bd2abc3eb3fc))
+* Update release type to python ([3f745c5](https://github.com/simao-ferreira/pyresume/commit/3f745c512361376274d99bf6d6137c181c9025df))
+
 ## [2.0.0](https://github.com/simao-ferreira/pyresume/compare/v1.1.1...v2.0.0) (2023-10-22)
 
 
