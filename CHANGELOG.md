@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.2](https://github.com/simao-ferreira/pyresume/compare/v2.0.1...v2.0.2) (2023-10-22)
+
+
+### Added
+
+* Refresh the readme file ([963c742](https://github.com/simao-ferreira/pyresume/commit/963c742681e83f8ad759dcf96130c969c04cd306))
+
+
+### Changed
+
+* Tweak pyproject ([ac2001b](https://github.com/simao-ferreira/pyresume/commit/ac2001b7ec7d7cd6ec3286f5ca0bb5de8be5cc91))
+
 ## [2.0.1](https://github.com/simao-ferreira/pyresume/compare/v2.0.0...v2.0.1) (2023-10-22)
 
 
