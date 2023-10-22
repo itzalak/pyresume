@@ -5,12 +5,11 @@ description = "My python approach to building my resume from markdown"
 authors = ["Simao Ferreira <simao.ferreira@tuta.io>"]
 license = "MIT"
 readme = "README.md"
+keywords = ["curriculum", "resume"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
 md2pdf = "^1.0.1"
-
-[tool.poetry.group.test.dependencies]
 pytest = "^7.4.2"
 
 [build-system]
