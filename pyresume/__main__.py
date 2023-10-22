@@ -5,7 +5,7 @@ from css_styles import CssStyles
 from default_resume import DefaultResume
 from file_actions import FileActions
 from markdown_to_pdf import main
-from settings import __version__
+from version import PACKAGE_VERSION
 
 
 def get_args():
@@ -59,7 +59,7 @@ def parse_final_args(parser: argparse.ArgumentParser):
     args = parser.parse_args()
 
     if args.version:
-        parser.exit(0, f"pyresume {__version__}\n")
+        parser.exit(0, f"pyresume {PACKAGE_VERSION}\n")
 
     if args.list:
         parser.exit(0, CssStyles.print_styles())

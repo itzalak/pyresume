@@ -1,11 +1,6 @@
 import os
 import platform
 
-
-# x-release-please-start-version
-__version__ = "2.0.0"
-# x-release-please-end
-
 HOME = os.getenv("HOME", os.getenv("USERPROFILE"))
 XDG_CACHE_DIR = os.getenv("XDG_CACHE_HOME", os.path.join(HOME, ".cache"))
 XDG_CONF_DIR = os.getenv("XDG_CONFIG_HOME", os.path.join(HOME, ".config"))
