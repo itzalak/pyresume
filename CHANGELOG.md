@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/simao-ferreira/markdown-resume/compare/v1.0.2...v1.1.0) (2023-10-22)
+
+
+### Added
+
+* Moving dependency management to poetry ([14b1aeb](https://github.com/simao-ferreira/markdown-resume/commit/14b1aeb3c453de6e7bab672135787e1cc6fc0b06))
+
 ## [1.0.2](https://github.com/simao-ferreira/markdown-resume/compare/v1.0.1...v1.0.2) (2023-10-04)
 
 
