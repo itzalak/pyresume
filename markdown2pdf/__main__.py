@@ -76,7 +76,7 @@ def parse_args(parser: argparse.ArgumentParser):
     css_style = CssStyles.default_style
 
     if len(sys.argv) <= 1:
-        print(f"No arguments given, defaulting to simple style")
+        print("No arguments given, defaulting to simple style")
 
     if args.md:
         markdown_file = args.md
