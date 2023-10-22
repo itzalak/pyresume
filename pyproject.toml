@@ -12,6 +12,17 @@ python = "^3.11"
 md2pdf = "^1.0.1"
 pytest = "^7.4.2"
 
+[tool.poetry.group.dev.dependencies]
+toml = "^0.10.2"
+
+[tool.pyright]
+include=["pyresume"]
+venvPath = "."
+venv = ".venv"
+executionEnvironments=[
+  {"root" = "pyresume"}
+]
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
