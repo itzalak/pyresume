@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyresume"
-version = "2.0.2"
+version = "2.0.3"
 description = "My python approach to building my resume from markdown"
 authors = ["Simao Ferreira <simao.ferreira@tuta.io>"]
 license = "MIT"

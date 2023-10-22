@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.3](https://github.com/simao-ferreira/pyresume/compare/v2.0.2...v2.0.3) (2023-10-22)
+
+
+### Changed
+
+* Add comments to makefile for transparency ([372f4eb](https://github.com/simao-ferreira/pyresume/commit/372f4eb248cee331a6d336dbf12c2ca415570abe))
+* Add version test, add pyright config ([2be06b1](https://github.com/simao-ferreira/pyresume/commit/2be06b1982d78b1e21501ceac7840999b77fcc54))
+
 ## [2.0.2](https://github.com/simao-ferreira/pyresume/compare/v2.0.1...v2.0.2) (2023-10-22)
 
 
