@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/simao-ferreira/markdown-resume/compare/v1.1.0...v1.1.1) (2023-10-22)
+
+
+### Changed
+
+* Fix string ([3b87cdb](https://github.com/simao-ferreira/markdown-resume/commit/3b87cdbdde464c9c8f8c905d0dd57afdc77dccf4))
+
 ## [1.1.0](https://github.com/simao-ferreira/markdown-resume/compare/v1.0.2...v1.1.0) (2023-10-22)
 
 
