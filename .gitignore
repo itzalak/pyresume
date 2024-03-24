@@ -137,4 +137,4 @@ dmypy.json
 
 # Private data
 /output/*
-/pyresume/assets/example-resume.md
+/pyresume/assets/resume.md
