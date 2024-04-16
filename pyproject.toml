@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyresume"
-version = "v3.0.2"
+version = "v3.0.3"
 description = "My python approach to building my resume from markdown"
 authors = ["Itzalak <itzalak@tuta.io>"]
 license = "MIT"
@@ -31,7 +31,7 @@ build-backend = "poetry.core.masonry.api"
 name = "cz_customize"
 tag_format = "v$major.$minor.$patch"
 version_scheme = "semver"
-version = "3.0.2"
+version = "3.0.3"
 update_changelog_on_bump = true
 version_files = [
     "pyproject.toml",
