@@ -3,14 +3,14 @@ import sys
 
 from md2pdf.core import md2pdf
 
-from default_resume import DefaultResume
-from file_actions import FileActions
+from pyresume.default_resume import DefaultResume
+from pyresume.file_actions import FileActions
 
 
 def generate_pdf(style: str, markdown_file: str):
     """Generate pdf file using a given style based of a markdown file"""
 
-    if markdown_file is DefaultResume.default_resume_path:
+    if markdown_file == DefaultResume.default_resume_path:
         output_pdf_path = DefaultResume.resume_path()
     else:
         output_pdf_path = FileActions.build_output_path(markdown_file)

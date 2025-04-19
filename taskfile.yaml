@@ -1,0 +1,98 @@
+version: '3'
+
+tasks:
+
+  default:
+    desc: Default
+    cmds:
+      - |
+        echo "Home dir: {{.HOME}}"
+        echo "Root dir: {{.ROOT_DIR}}"
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
+
+  assert:
+    cmds:
+      - for:
+          var: REQUIRED_TOOLS
+          split: ','
+          as: TOOL
+        cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
+    internal: true
+    vars:
+      REQUIRED_TOOLS: pre-commit, uv
+
+  setup:
+    deps: [assert]
+    desc: Set up uv and pre-commit
+    cmds:
+      - task: precommit_setup
+      - uv sync
+
+  update:
+    deps: [assert]
+    desc: Update uv and pre-commit
+    cmds:
+      - task: uv_update
+      - pre-commit autoupdate
+
+  precommit_setup:
+    internal: true
+    deps: [assert]
+    desc: Initialize pre-commit
+    cmds:
+      - pre-commit install
+      - pre-commit autoupdate
+
+  uv_update:
+    internal: true
+    deps: [assert]
+    desc: Update uv dependencies
+    cmds:
+      - rm -rf .venv
+      - uv lock --upgrade
+      - uv sync
+
+  run:
+    aliases: [pre_commit_run]
+    deps: [assert]
+    desc: Run pre-commit on all files
+    cmds:
+      - pre-commit run --color always --all-files
+
+  uv:
+    deps: [assert]
+    desc: Refresh uv environment
+    cmds:
+      - uv sync
+
+  test:
+    aliases: [uv_test]
+    deps: [assert]
+    desc: Run tests using uv
+    cmds:
+      - uv run pytest
+
+  resume_simple:
+    deps: [assert]
+    desc: Simple resume
+    cmds:
+      - uv run pyresume/__main__.py -simple
+
+  resume_bar:
+    deps: [assert]
+    desc: Bar resume
+    cmds:
+      - uv run pyresume/__main__.py -bar
+
+  resume_divider:
+    deps: [assert]
+    desc: Divider resume
+    cmds:
+      - uv run pyresume/__main__.py -divider

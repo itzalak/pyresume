@@ -2,7 +2,7 @@ import glob
 import os
 import pathlib
 
-from settings import OUTPUT_DIR, MODULE_DIR
+from pyresume.settings import OUTPUT_DIR, MODULE_DIR
 
 
 class FileActions:

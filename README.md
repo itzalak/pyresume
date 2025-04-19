@@ -12,8 +12,7 @@ This code is just a wrapper for the work done by Julien Maupetit with [md2pdf](h
 ## Requirements
 
 - Python
-- Black
-- Poetry
+- UV
 - Pre-commit
 - Commitizen
 - Weasyprint
@@ -28,25 +27,21 @@ To generate a resume:
 
 1. Place your resume file in `./pyresume/assets/resume.md`
 2. Select a style from [style folder](./pyresume/assets/styles/) if none is selected defaults to [simple style](pyresume/assets/styles/simple-style.css)
-3. Run the execution command from the examples below, like `make resume-simple`, or `poetry run python pyresume/__main__.py -bar`
+3. Run the execution command from the examples below, like `make resume-simple`, or `uv run pyresume/__main__.py -bar`
 4. Find the pdf resume under [output folder](./output)
 
-- Create a resume with simple look using makefile
+- Create a resume with simple look using taskfile
+
+- Use uv, available style options are `-simple`, `-bar`, `-divider`
 
 ```shell
-make resume-simple
-```
-
-- Or use poetry, available style options are `-simple`, `-bar`, `-divider`
-
-```shell
-poetry run python pyresume/__main__.py -simple
+uv run pyresume/__main__.py -simple
 ```
 
 - Run with path to your own css style
 
 ```shell
-poetry run pyresume/__main__.py --style {{path/to/user/style.css}}
+uv run pyresume/__main__.py --style {{path/to/user/style.css}}
 ```
 
 ### Tests
@@ -54,5 +49,5 @@ poetry run pyresume/__main__.py --style {{path/to/user/style.css}}
 - Run all tests
 
 ```shell
-poetry run pytest
+uv run pytest
 ```

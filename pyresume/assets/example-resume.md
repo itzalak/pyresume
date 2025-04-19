@@ -56,7 +56,7 @@ Description of who I am and what I like!
 
 - Internship/Thesis: Description
 
-### From yyyy to yyyy
+### From yyyy to yyyy (2)
 
 **Education level**, Name of school, Place - specialization.
 

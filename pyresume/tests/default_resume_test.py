@@ -1,14 +1,21 @@
 import re
 
-from default_resume import DefaultResume
-from settings import OUTPUT_DIR, MODULE_DIR
+from pyresume.default_resume import DefaultResume
+from pyresume.settings import MODULE_DIR, OUTPUT_DIR
 
 FILENAME_PATTERN = r"resume-\d{14}.pdf"
 RESUME_PATH = f"{MODULE_DIR}/assets/resume.md"
 
 
 def test_default_resume_path():
-    assert DefaultResume.default_resume_path == f"{MODULE_DIR}/assets/resume.md"
+    expected_primary_path = f"{MODULE_DIR}/assets/resume.md"
+    expected_fallback_path = f"{MODULE_DIR}/assets/example-resume.md"
+
+    # Test should pass if default_resume_path matches either the primary or fallback path
+    assert DefaultResume.default_resume_path in (
+        expected_primary_path,
+        expected_fallback_path,
+    )
 
 
 def test_build_output_resume_pdf_filename():

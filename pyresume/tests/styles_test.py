@@ -1,7 +1,7 @@
 from os.path import exists
 
-from css_styles import CssStyles
-from settings import MODULE_DIR
+from pyresume.css_styles import CssStyles
+from pyresume.settings import MODULE_DIR
 
 
 def test_simple_style_path():

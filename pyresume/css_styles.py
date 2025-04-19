@@ -1,6 +1,6 @@
 import os
 
-from settings import STYLES_DIR
+from pyresume.settings import STYLES_DIR
 
 
 class CssStyles:

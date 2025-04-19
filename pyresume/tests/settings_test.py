@@ -1,4 +1,4 @@
-from settings import ASSETS_DIR, OUTPUT_DIR, STYLES_DIR, MODULE_DIR
+from pyresume.settings import ASSETS_DIR, OUTPUT_DIR, STYLES_DIR, MODULE_DIR
 
 
 def test_assets_dir_path():

@@ -5,10 +5,10 @@ from os.path import exists
 
 import pytest
 
-from css_styles import CssStyles
-from default_resume import DefaultResume
-from markdown_to_pdf import generate_pdf, main
-from settings import MODULE_DIR
+from pyresume.css_styles import CssStyles
+from pyresume.default_resume import DefaultResume
+from pyresume.markdown_to_pdf import generate_pdf, main
+from pyresume.settings import MODULE_DIR
 
 OUTPUT_DATA_PATH = f"{MODULE_DIR}/../output/resume*.pdf"
 RESUME = DefaultResume.default_resume_path
@@ -38,7 +38,7 @@ def teardown_function():
 
 
 def test_generate_pdf_from_given_style_file():
-    path = os.path.join(MODULE_DIR, "../tests/data/test-style.css")
+    path = os.path.join(MODULE_DIR, "tests/data/test-style.css")
     generate_pdf(path, RESUME)
 
     asset_path = glob.glob(OUTPUT_DATA_PATH)[0]
@@ -74,7 +74,7 @@ def test_generate_pdf_divider_style():
 
 
 def test_generate_pdf_from_input_markdown_file():
-    input_file = os.path.join(MODULE_DIR, "../tests/data/test-markdown-file.md")
+    input_file = os.path.join(MODULE_DIR, "tests/data/test-markdown-file.md")
     generate_pdf(CssStyles.divider_style, input_file)
 
     asset_path = os.path.join(MODULE_DIR, "../output/test-markdown-file.pdf")
@@ -82,7 +82,7 @@ def test_generate_pdf_from_input_markdown_file():
 
 
 def test_failure_file_not_markdown():
-    input_file = os.path.join(MODULE_DIR, "../tests/data/non-existent-file.mk")
+    input_file = os.path.join(MODULE_DIR, "tests/data/non-existent-file.mk")
 
     with pytest.raises(
         ValueError, match=r"File must be from type markdown, instead \.[a-z]+ was found"
@@ -91,7 +91,7 @@ def test_failure_file_not_markdown():
 
 
 def test_main_input_css_file():
-    input_file = os.path.join(MODULE_DIR, "../tests/data/test-style.css")
+    input_file = os.path.join(MODULE_DIR, "tests/data/test-style.css")
     main(input_file, RESUME)
 
     asset_path = glob.glob(OUTPUT_DATA_PATH)[0]
@@ -99,7 +99,7 @@ def test_main_input_css_file():
 
 
 def test_main_input_markdown_file():
-    input_file = os.path.join(MODULE_DIR, "../tests/data/test-markdown-file.md")
+    input_file = os.path.join(MODULE_DIR, "tests/data/test-markdown-file.md")
     main(CssStyles.divider_style, input_file)
 
     asset_path = os.path.join(MODULE_DIR, "../output/test-markdown-file.pdf")

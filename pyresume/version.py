@@ -1,3 +1,11 @@
 import importlib.metadata
 
-__version__ = importlib.metadata.version("pyresume")
+
+def get_version() -> str:
+    try:
+        return importlib.metadata.version("pyresume")
+    except importlib.metadata.PackageNotFoundError:
+        return "0.0.0"
+
+
+__version__ = f"v{get_version()}"

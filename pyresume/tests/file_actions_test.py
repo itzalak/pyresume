@@ -3,8 +3,8 @@ import os
 
 import pytest
 
-from file_actions import FileActions
-from settings import MODULE_DIR
+from pyresume.file_actions import FileActions
+from pyresume.settings import MODULE_DIR
 
 
 def test_successful_locate_dir():
@@ -17,7 +17,7 @@ def test_failed_locate_dir():
 
 def test_successful_validate_file_exists():
     FileActions.validate_file_exists(
-        os.path.join(MODULE_DIR, "../tests/data/test-markdown-file.md")
+        os.path.join(MODULE_DIR, "tests/data/test-markdown-file.md")
     )
 
 

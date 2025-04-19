@@ -1,19 +1,21 @@
-[tool.poetry]
+[project]
 name = "pyresume"
-version = "v3.0.3"
+version = "3.0.3"
 description = "My python approach to building my resume from markdown"
-authors = ["Itzalak <itzalak@tuta.io>"]
-license = "MIT"
+authors = [{ name = "Itzalak", email = "itzalak@tuta.io" }]
 readme = "README.md"
 keywords = ["curriculum", "resume"]
+license = "MIT"
+requires-python = ">=3.13"
+dependencies = [
+  "pytest >= 8.3.3",
+  "md2pdf >= 1.0.1",
+  "toml >= 0.10.2",
+]
 
-[tool.poetry.dependencies]
-python = "^3.11"
-md2pdf = "^1.0.1"
-pytest = "^7.4.2"
-
-[tool.poetry.group.dev.dependencies]
-toml = "^0.10.2"
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
 
 [tool.pyright]
 include=["pyresume"]
@@ -22,10 +24,6 @@ venv = ".venv"
 executionEnvironments=[
   {"root" = "pyresume"}
 ]
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
 
 [tool.commitizen]
 name = "cz_customize"

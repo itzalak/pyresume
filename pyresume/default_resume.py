@@ -1,11 +1,19 @@
 import os
 from datetime import datetime
 
-from settings import OUTPUT_DIR, ASSETS_DIR
+from pyresume.settings import OUTPUT_DIR, ASSETS_DIR
 
 
 class DefaultResume:
-    default_resume_path = os.path.join(ASSETS_DIR, "resume.md")
+    default_resume_file = "resume.md"
+    example_resume_file = "example-resume.md"
+
+    primary_path = os.path.join(ASSETS_DIR, default_resume_file)
+    fallback_path = os.path.join(ASSETS_DIR, example_resume_file)
+
+    default_resume_path = (
+        fallback_path if not os.path.exists(primary_path) else primary_path
+    )
 
     @staticmethod
     def build_output_resume_filename():
