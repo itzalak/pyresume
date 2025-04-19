@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.1.0 (2025-04-19)
+
+### Changed
+
+- refactor package, replace poetry
+
 ## v3.0.3 (2024-04-16)
 
 ### Tools
