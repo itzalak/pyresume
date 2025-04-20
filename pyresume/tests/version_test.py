@@ -9,7 +9,7 @@ def find_project_root(start_path=None):
         start_path = Path(__file__).parent
 
     current = start_path
-    while current != current.parent:  # Stop at filesystem root
+    while current != current.parent:
         if (current / "pyproject.toml").exists():
             return current
         current = current.parent

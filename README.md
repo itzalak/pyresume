@@ -19,29 +19,33 @@ This code is just a wrapper for the work done by Julien Maupetit with [md2pdf](h
 
 ## Instructions
 
-Instructions for setup can be found in the [makefile](./makefile)
+Instructions for setup can be found in the [taskfile](./taskfile.yaml)
 
 ## Examples
 
 To generate a resume:
 
-1. Place your resume file in `./pyresume/assets/resume.md`
+1. Place your resume file in `./pyresume/assets` as `resume.md`
 2. Select a style from [style folder](./pyresume/assets/styles/) if none is selected defaults to [simple style](pyresume/assets/styles/simple-style.css)
-3. Run the execution command from the examples below, like `make resume-simple`, or `uv run pyresume/__main__.py -bar`
+3. Run the execution command from the examples below, like `make resume-simple`, or `uv run pyresume/cli.py -bar`
 4. Find the pdf resume under [output folder](./output)
-
-- Create a resume with simple look using taskfile
 
 - Use uv, available style options are `-simple`, `-bar`, `-divider`
 
 ```shell
-uv run pyresume/__main__.py -simple
+uv run pyresume/cli.py -simple
 ```
 
 - Run with path to your own css style
 
 ```shell
-uv run pyresume/__main__.py --style {{path/to/user/style.css}}
+uv run pyresume/cli.py --style {{path/to/user/style.css}}
+```
+
+- Run with path to your PDF file
+
+```shell
+uv run pyresume/cli.py --md {{path/to/user/file.md}}
 ```
 
 ### Tests

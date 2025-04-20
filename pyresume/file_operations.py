@@ -1,26 +1,30 @@
 import glob
 import os
-import pathlib
+from pathlib import Path
+from datetime import datetime
 
 from pyresume.settings import OUTPUT_DIR, MODULE_DIR
 
 
-class FileActions:
+class FileOperations:
     @staticmethod
-    def locate_directory(path) -> bool:
+    def assert_directory_exists(dir_path):
         """Check if the given path is a directory"""
-        return os.path.isdir(path)
+        path = Path(dir_path)
+        if not path.is_dir():
+            raise FileNotFoundError(f"No directory was found at path: {path}")
 
     @staticmethod
-    def validate_file_exists(path):
+    def assert_file_exists(file_path):
         """Check if the given path is a file, if not raise an exception"""
-        if not os.path.isfile(path):
-            raise FileNotFoundError(f"No file was found on path: {path}")
+        path = Path(file_path)
+        if not path.is_file():
+            raise FileNotFoundError(f"No file was found at path: {path}")
 
     @staticmethod
     def replace_extensions_markdown_for_pdf(filename: str):
         """Replace markdown for pdf extension, if file extension is not markdown raise an error"""
-        file_extension = pathlib.Path(filename).suffix
+        file_extension = Path(filename).suffix
         if file_extension in [".md", ".markdown"]:
             return filename.replace(file_extension, ".pdf")
         else:
@@ -29,10 +33,9 @@ class FileActions:
             )
 
     @classmethod
-    def build_output_path(cls, path: str):
+    def build_output_path(cls, path: Path):
         """Build new filename for pdf file"""
-        filename = os.path.basename(path)
-        pdf_filename = cls.replace_extensions_markdown_for_pdf(filename)
+        pdf_filename = cls.replace_extensions_markdown_for_pdf(path.name)
         return os.path.join(OUTPUT_DIR, pdf_filename)
 
     @staticmethod
@@ -42,3 +45,9 @@ class FileActions:
         if output_pdfs:
             for pdf in output_pdfs:
                 os.remove(pdf)
+
+    @staticmethod
+    def build_timestamped_filename(prefix: str = "resume") -> str:
+        """Create a filename with timestamp identifier"""
+        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+        return f"{prefix}-{timestamp}.pdf"

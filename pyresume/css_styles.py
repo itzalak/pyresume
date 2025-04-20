@@ -1,25 +1,49 @@
-import os
+from pathlib import Path
+from typing import List
 
 from pyresume.settings import STYLES_DIR
 
 
 class CssStyles:
-    bar_style = os.path.join(STYLES_DIR, "bar-style.css")
-    divider_style = os.path.join(STYLES_DIR, "divider-style.css")
-    simple_style = os.path.join(STYLES_DIR, "simple-style.css")
-    default_style = simple_style
+    """Manages CSS style files"""
 
-    @staticmethod
-    def stylenames():
-        """Get all style names without extension"""
-        default_styles = os.listdir(STYLES_DIR)
-        style_names = [s.replace(".css", "") for s in default_styles]
+    styles_dir = Path(STYLES_DIR)
+    DEFAULT_STYLE_NAME = "simple-style"
+
+    @classmethod
+    def get_style_path(cls, style_name: str) -> Path:
+        """Get the full path to a style file by name"""
+        return cls.styles_dir / f"{style_name}.css"
+
+    @classmethod
+    def get_styles(cls) -> List[str]:
+        """Get all available style names without extension"""
+        if not cls.styles_dir.exists():
+            return []
+
+        style_files = cls.styles_dir.glob("*.css")
+        style_names = [style_file.stem for style_file in style_files]
         return sorted(style_names)
 
     @classmethod
-    def print_styles(cls):
-        """List all styles in a pretty format."""
+    def print_styles(cls) -> None:
+        """Print all available styles"""
+        style_names = cls.get_styles()
+        print("\033[1;32mAvailable styles\033[0m:")
+        print(" >", "\n > ".join(style_names))
 
-        style_names = cls.stylenames()
-        print("\033[1;32mDefault styles\033[0m:")
-        print(" >", "\n > ".join(t for t in style_names))
+    @property
+    def bar_style(self) -> str:
+        return str(self.get_style_path("bar-style"))
+
+    @property
+    def divider_style(self) -> str:
+        return str(self.get_style_path("divider-style"))
+
+    @property
+    def simple_style(self) -> str:
+        return str(self.get_style_path("simple-style"))
+
+    @property
+    def default_style(self) -> str:
+        return str(self.get_style_path(self.DEFAULT_STYLE_NAME))
