@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.0 (2025-04-20)
+
+### Breaking Change
+
+- refactor pyresume
+
 ## v3.1.0 (2025-04-19)
 
 ### Changed
