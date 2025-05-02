@@ -47,8 +47,8 @@ version_files = [
 [tool.commitizen.customize]
 schema = "<type>: <body>"
 schema_pattern = "(bump|break|feat|chore|tools|docs|fix):(\\s.*)"
-bump_pattern = "^(bump|break|feat|tools|fix)"
-bump_map = { "break" = "MAJOR", "feat" = "MINOR", "tools" = "PATCH", "fix" = "PATCH", "docs" = "PATCH" }
+bump_pattern = "^(bump|break|feat|chore|tools|fix)"
+bump_map = { "break" = "MAJOR", "feat" = "MINOR", "chore" = "PATCH", "tools" = "PATCH", "fix" = "PATCH", "docs" = "PATCH" }
 change_type_order = ["break", "feat", "fix", "chore", "tools", "docs"]
 commit_parser = "^(?P<change_type>break|feat|chore|tools|docs|fix):\\s(?P<message>.*)?"
 changelog_pattern = "^(break|feat|chore|tools|docs|fix)?(!)?"
