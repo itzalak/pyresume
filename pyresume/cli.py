@@ -3,8 +3,9 @@ import sys
 
 from css_styles import CssStyles
 from file_operations import FileOperations
-from pyresume.pdf_generator import PdfGenerator
 from version import __version__
+
+from pyresume.pdf_generator import PdfGenerator
 
 
 def build_parser():

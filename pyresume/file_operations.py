@@ -1,9 +1,9 @@
 import glob
 import os
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
-from pyresume.settings import OUTPUT_DIR, MODULE_DIR
+from pyresume.settings import MODULE_DIR, OUTPUT_DIR
 
 
 class FileOperations:

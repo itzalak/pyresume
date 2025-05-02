@@ -1,14 +1,11 @@
-from typing import Union
-
-from pyresume.file_operations import FileOperations
-
-
 import sys
 from pathlib import Path
+from typing import Union
 
 from md2pdf.core import md2pdf
 
-from pyresume.settings import OUTPUT_DIR, ASSETS_DIR
+from pyresume.file_operations import FileOperations
+from pyresume.settings import ASSETS_DIR, OUTPUT_DIR
 
 
 class PdfGenerator:

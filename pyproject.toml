@@ -17,13 +17,22 @@ dependencies = [
 requires = ["hatchling >= 1.26"]
 build-backend = "hatchling.build"
 
-[tool.pyright]
-include=["pyresume"]
-venvPath = "."
-venv = ".venv"
-executionEnvironments=[
-  {"root" = "pyresume"}
+[tool.ruff]
+exclude = [
+    ".direnv",
+    ".git",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "venv",
 ]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
 
 [tool.commitizen]
 name = "cz_customize"
