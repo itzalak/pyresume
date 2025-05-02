@@ -1,5 +1,15 @@
 # Changelog
 
+## v4.0.1 (2025-05-02)
+
+### Changed
+
+- tweak linting and formatting
+
+### Tools
+
+- update cz configuration to bump chores
+
 ## v4.0.0 (2025-04-20)
 
 ### Breaking Change
