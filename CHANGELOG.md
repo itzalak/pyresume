@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.0.2 (2025-06-10)
+
+### Tools
+
+- bump pre commit and uv
+- add uv to pyproject
+
 ## v4.0.1 (2025-05-02)
 
 ### Changed
